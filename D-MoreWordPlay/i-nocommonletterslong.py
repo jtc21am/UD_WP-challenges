@@ -1,0 +1,2 @@
+# Revisiting for loops, if conditions, and using lists as storage
+# [ ] What is the longest word that can be made without the letters in “AEIOSHRTN” (in other words, without the most common letters)? Make sure your solution can handle ties.
