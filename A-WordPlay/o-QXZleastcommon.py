@@ -28,3 +28,4 @@ print(min(qxz_dict))
 
 #min_value = min(qxz_dict)
 #min_value_letter = min(qxz_dict.values())
+sowpods.close()

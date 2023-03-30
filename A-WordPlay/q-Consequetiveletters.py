@@ -23,3 +23,4 @@ while (word_in_list):
             conseq_letters.remove(characters)
     word_in_list = sowpods.readline().strip()
 print(conseq_letters)
+sowpods.close()

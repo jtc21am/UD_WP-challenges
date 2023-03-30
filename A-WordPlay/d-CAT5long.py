@@ -17,3 +17,4 @@ while(rowwords):
     if len(rowwords) == 5 and "CAT" in rowwords:
         print(rowwords)
     rowwords = sowpods.readline().strip()
+sowpods.close()

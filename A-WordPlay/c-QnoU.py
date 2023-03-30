@@ -17,3 +17,4 @@ while(word_in_list):
     if "Q" in word_in_list and not "U" in word_in_list:
         print(word_in_list)
     word_in_list = sowpods.readline().strip()
+sowpods.close()

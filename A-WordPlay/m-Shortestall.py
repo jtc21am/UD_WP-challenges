@@ -28,3 +28,4 @@ while(word_in_list):
     word_in_list = sowpods.readline().strip()
 
 print(min(all_vowel_list, key=len))
+sowpods.close()

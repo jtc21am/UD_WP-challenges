@@ -19,5 +19,6 @@ while(rowwords):
         print(rowwords)
     rowwords = sowpods.readline().strip()
 
+sowpods.close()
 
 

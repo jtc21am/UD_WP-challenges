@@ -21,3 +21,4 @@ while(word_in_list):
         ghtly_list.append(word_in_list)
     word_in_list = sowpods.readline().strip()
 print(ghtly_list)
+sowpods.close()

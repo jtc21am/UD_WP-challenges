@@ -1,5 +1,5 @@
 '''For loops and if conditions
-[ ] What are all of the words containing an X and a Y and a Z?'''
+What countries both begin and end with a vowel?'''
 
 # Open text file, "r" open for reading (default)
 # The readlines() method returns a list containing each line in the file as a list item.
@@ -9,22 +9,19 @@
 # Based on a list of required characters, 
 # Iterate through each character in word list, 
 # Use list comprehesion to test False for any Vowel
-#   All in List comprehension:
+#   Any in List comprehension:
 #       def any(iterable: Iterable[object], /) -> bool
-#       Return True if bool(x) is True for all values x in the iterable.
-#       If the iterable is empty, return True.
+#       Return True if bool(x) is True for any x in the iterable.
+#       If the iterable is empty, return False.
 #   If True, print
 #   If False, move to next word in list
 
-sowpods = open("sowpods.txt","r")
-word_in_list = sowpods.readline().strip()
-required_characters = ["X", "Y", "Z"]
-
-while(word_in_list):
-    if all([character in word_in_list for character in required_characters]) == True:
-            print(word_in_list)
-    word_in_list = sowpods.readline().strip()
+countries = open('countries.txt','r')
+word_in_list = [line.strip() for line in countries.readlines()]
+required_characters = ['A', 'E', 'I', 'O', 'U']
 
 
-
-sowpods.close()
+for word in word_in_list:
+    if word.startswith(tuple(required_characters)) and word.upper().endswith(tuple(required_characters)):
+        print(word)
+countries.close()

@@ -19,5 +19,5 @@ while(word_in_list):
 
 import time
 print(time.perf_counter())
-    
+sowpods.close()
 

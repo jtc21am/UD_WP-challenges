@@ -16,3 +16,4 @@ while(rowwords):
     if rowwords.startswith("Y") and rowwords.endswith("Y"):
         print(rowwords)
     rowwords = sowpods.readline().strip()
+sowpods.close()

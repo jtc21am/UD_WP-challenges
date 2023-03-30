@@ -23,3 +23,4 @@ while(word_in_list):
     word_in_list = sowpods.readline().strip()
 
 
+sowpods.close()
