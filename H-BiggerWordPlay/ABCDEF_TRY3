@@ -1,0 +1,25 @@
+def find_alphabet_chains(s):
+    # Get the length of the input string
+    n = len(s)
+    # Create a set containing all the letters of the alphabet
+    alphabet = set('abcdefghijklmnopqrstuvwxyz')
+    # Initialize an empty list to store the result
+    result = []
+    # Initialize two pointers i and j to keep track of the current substring
+    i = j = 0
+    # Loop through the input string while both pointers are within the string
+    while i < n and j < n:
+        # Check if the current substring is a contiguous chain of the alphabet or a subset of the alphabet
+        if set(s[i:j+1].lower()) == alphabet or s[i:j+1].lower() in alphabet:
+            # If it is, add the substring to the result list and move the i pointer forward
+            result.append(s[i:j+1])
+            i += 1
+        else:
+            # If it's not, move the j pointer forward
+            j += 1
+    # Return the list of substrings that are contiguous chains of the alphabet or a subset of the alphabet
+    return result
+
+s5 = "gacbzefd"
+output5 = find_alphabet_chains(s5)
+print(output5)

@@ -1,0 +1,42 @@
+from collections import deque
+
+def isValid(s):
+    # If the length of the input string is odd, it cannot contain valid pairs of brackets
+    if len(s) % 2 != 0:
+        return False
+    
+    opening_brackets = {'(', '{', '['}
+    closing_brackets = {')', '}', ']'}
+
+    # If the input string does not contain any opening or closing brackets, it cannot contain valid pairs of brackets
+    if opening_brackets.intersection(set(s)) == set() or closing_brackets.intersection(set(s)) == set():
+        return False
+
+    # Create an empty deque to represent the stack
+    stack = deque()
+    
+    # Create a dictionary to map opening brackets to their corresponding closing brackets
+    matched_pairs = {'(':')', '{':'}','[':']'}
+   
+    # Iterate over the input string by index
+    for i, char in enumerate(s):
+        
+        # If the stack is empty and the matching closing bracket does not appear later in the string, the string is invalid
+        if len(stack) == 0 and matched_pairs[char] not in s[i+1:]:
+            return False
+        
+        # If the current character matches the top of the stack, we pop the top element from the stack
+        if len(stack) > 0 and matched_pairs[stack[-1]] == char:
+            stack.pop()
+        
+        # Otherwise, we push the current character onto the stack
+        else:
+
+            stack.append(char)
+    
+    # If the stack is empty, the string contains valid pairs of brackets
+    return len(stack) == 0
+
+
+s1 = '[(){()}]'
+print(isValid(s1))
